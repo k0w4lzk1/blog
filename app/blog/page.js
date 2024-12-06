@@ -47,56 +47,75 @@ export default async function BlogPage() {
         </div>
 
         {/* Featured Section */}
-        <section className="mb-16">
-          <h2 className="text-xl font-semibold mb-4">Latest Posts</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {posts.slice(1, 3).map((post) => (
-              <Link 
-                href={`/blog/${post.slug}`} 
-                key={post.slug}
-                className="group block rounded-xl bg-[#111111] border border-[#222222] overflow-hidden"
-              >
-                <div className="h-[200px] bg-gradient-to-r from-blue-500 to-purple-500">
-                  {/* Image placeholder */}
-                </div>
-                <div className="p-6">
-                  <span className="text-sm text-foreground/60">{post.date}</span>
-                  <h3 className="text-2xl font-bold mt-2 group-hover:text-blue-400">{post.title}</h3>
-                  <p className="mt-2 text-foreground/80">{post.description}</p>
-                  <div className="mt-4 flex items-center">
-                    <span className="text-sm text-foreground/60">{post.read} minutes read</span>
-                  </div>
-                </div>
-              </Link>
-            ))}
+        {/* <section className="mb-16">
+  <h2 className="text-xl font-semibold mb-4">Latest Posts</h2>
+  <div className="grid md:grid-cols-2 gap-6">
+    {posts.slice(1, 3).map((post) => (
+      <Link 
+        href={`/blog/${post.slug}`} 
+        key={post.slug}
+        className="group block rounded-xl bg-[#111111] border border-[#222222] overflow-hidden"
+      >
+        <div className="h-[200px] bg-gradient-to-r from-blue-500 to-purple-500 relative">
+          <Image
+            src={post.image}
+            alt={post.title}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover"
+            priority
+          />
+        </div>
+        <div className="p-6">
+          <span className="text-sm text-foreground/60">{post.date}</span>
+          <h3 className="text-2xl font-bold mt-2 group-hover:text-blue-400">{post.title}</h3>
+          <div 
+            className="mt-2 text-sm text-foreground/80 prose prose-sm prose-invert"
+            dangerouslySetInnerHTML={{ __html: `${post.content.slice(0, 150)}...` }} 
+          />
+          <div className="mt-4 flex items-center">
+            <span className="text-sm text-foreground/60">{post.read} minutes read</span>
           </div>
-        </section>
-
+        </div>
+      </Link>
+    ))}
+  </div>
+</section> */}
         {/* All Posts Section */}
         <section>
-          <h2 className="text-xl font-semibold mb-4">All posts</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {posts.map((post) => (
-              <Link 
-                href={`/blog/${post.slug}`} 
-                key={post.slug}
-                className="group block rounded-xl bg-[#111111] border border-[#222222] overflow-hidden"
-              >
-                <div className="h-[160px] bg-gradient-to-r from-green-500 to-blue-500">
-                  {/* Image placeholder */}
-                </div>
-                <div className="p-6">
-                  <span className="text-sm text-foreground/60">{post.date}</span>
-                  <h3 className="text-xl font-bold mt-2 group-hover:text-blue-400">{post.title}</h3>
-                  <p className="mt-2 text-sm text-foreground/80">{post.description}</p>
-                  <div className="mt-4 flex items-center">
-                    <span className="text-sm text-foreground/60">{post.read} minutes read</span>
-                  </div>
-                </div>
-              </Link>
-            ))}
+  <h2 className="text-xl font-semibold mb-4">All Posts</h2>
+  <div className="grid md:grid-cols-3 gap-6">
+    {posts.map((post) => (
+      <Link 
+        href={`/blog/${post.slug}`} 
+        key={post.slug}
+        className="group block rounded-xl bg-[#111111] border border-[#222222] overflow-hidden"
+      >
+        <div className="h-[250px] bg-gradient-to-r from-green-500 to-blue-500 relative">
+          <Image
+            src={post.image}
+            alt={post.title}
+            fill
+            sizes="(max-width: 768px) 100vw, 33vw"
+            className="object-cover"
+            priority
+          />
+        </div>
+        <div className="p-6">
+          <span className="text-sm text-foreground/60">{post.date}</span>
+          <h3 className="text-xl font-bold mt-2 group-hover:text-blue-400">{post.title}</h3>
+          <div 
+            className="mt-2 text-sm text-foreground/80 prose prose-sm prose-invert"
+            dangerouslySetInnerHTML={{ __html: `${post.content.slice(0, 150)}...` }} 
+          />
+          <div className="mt-4 flex items-center">
+            <span className="text-sm text-foreground/60">{post.read} minutes read</span>
           </div>
-        </section>
+        </div>
+      </Link>
+    ))}
+  </div>
+</section>
       </div>
     </main>
   );

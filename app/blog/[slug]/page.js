@@ -3,25 +3,32 @@ import path from "path";
 import matter from "gray-matter";
 import { getPostBySlug } from "@/lib/posts";
 import { remark } from 'remark';
-import html from 'remark-html';
+import remarkRehype from 'remark-rehype';
+import rehypeStringify from 'rehype-stringify';
+import rehypeHighlight from 'rehype-highlight';
+import 'highlight.js/styles/github-dark.css';
 
 export default async function BlogPostPage({ params }) {
   const post = await getPostBySlug(params.slug);
   const processedContent = await remark()
-    .use(html)
+    .use(remarkRehype)
+    .use(rehypeHighlight)
+    .use(rehypeStringify)
     .process(post.content);
   const contentHtml = processedContent.toString();
-
+  
   return (
-    <article className="container mx-auto p-4">
-      <h1 className="text-4xl font-bold">{post.metadata.title}</h1>
-      <div className="mt-4 text-foreground/60">
-        <time>{post.metadata.date}</time>
+    <article className="container mx-auto p-4 max-w-3xl">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold">{post.metadata.title}</h1>
+        <div className="mt-4 text-foreground/60">
+          <time>{post.metadata.date}</time>
+        </div>
       </div>
       <div 
-        className="mt-8 prose prose-zinc dark:prose-invert"
+        className="mt-8 prose prose-zinc dark:prose-invert mx-auto"
         dangerouslySetInnerHTML={{ __html: contentHtml }}
       />
     </article>
   );
-} 
+}
