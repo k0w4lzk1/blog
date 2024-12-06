@@ -1,5 +1,6 @@
 ---
 title: "Trillion Bank - Web Challenge Writeup"
+CTF: "Seccon24"
 date: "2024-12-7"
 description: "A writeup for the Trillion Bank web challenge from SECCON CTF"
 read: 10
@@ -7,9 +8,7 @@ image: /images/Seccon.png
 ---
 
 # Trillion Bank - Web Challenge
-**Points:** Not specified  
 **Author:** Arkark_  
-**Solves:** 82
 
 ## Challenge Description
 A web challenge involving a banking system where you need to accumulate a trillion coins to get the flag.
