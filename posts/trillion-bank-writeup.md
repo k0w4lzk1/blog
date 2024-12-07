@@ -300,6 +300,3 @@ print(res.json()["flag"])
 2. Be aware of database field limitations and their truncation behavior
 3. Consider how truncation might affect application logic
 4. Test edge cases with maximum field lengths
-
-## Flag
-*Flag not provided in the original content*
