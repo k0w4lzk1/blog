@@ -3,7 +3,7 @@ title: "Web Challenge Writeup"
 CTF: "Seccon24"
 date: "2024-12-7"
 description: "A writeup for web challenges from SECCON CTF"
-read: 10
+read: 20
 image: /images/Seccon.png
 ---
 
@@ -122,8 +122,7 @@ We see that it is a bun server and there are two main routes established
     
     → More importantly the most important thing to notice here is that the server adds the flag as a parameter alongside our given flag and then sends it to the `/flag` endpoint which checks if the flag matches then it returns you the flag
     
-- `/flag`
-    
+- `/flag`    
     → Just checks if the given flag in the parameter is the same flag which is given if so it returns you the actual flag
     
 
@@ -148,7 +147,7 @@ When you read the  documentation for qs library there is a small peculiarity the
         var pos = bracketEqualsPos === -1 ? part.indexOf('=') : bracketEqualsPos + 1;
 ```
 
-qs library prioritizes ]= over =  when trying to decide what the  seperation between key and value is
+qs library prioritizes `]=` over `=`  when trying to decide what the  seperation between key and value is
 
 This gives us an opportunity to craft a payload that express will parse 
 as having a flag parameter the first time, which will then be modified 
