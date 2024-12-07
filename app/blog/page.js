@@ -10,7 +10,7 @@ export default async function BlogPage() {
       <div className="max-w-5xl mx-auto p-8">
         <div className="mb-12">
           <h1 className="text-4xl font-bold mb-2">Blog</h1>
-          <p className="text-foreground/60">Compiled notes from the team</p>
+          <p className="text-foreground/60">Just a place where i put things down</p>
         </div>
 
         {/* Featured Post */}
