@@ -6,7 +6,7 @@ export default async function BlogPage() {
   const posts = await getAllPosts();
 
   return (
-    <main className="min-h-screen bg-[#0a0a0a]">
+    <main className="min-h-screen bg-[#0a0a0a] bg-[url('https://www.transparenttextures.com/patterns/black-lozenge.png')]">
       <div className="max-w-5xl mx-auto p-8">
         <div className="mb-12">
           <h1 className="text-4xl font-bold mb-2">Blog</h1>
@@ -15,35 +15,35 @@ export default async function BlogPage() {
 
         {/* Featured Post */}
         <div className="mb-16">
-          <Link 
-            href={`/blog/${posts[0]?.slug}`}
-            className="group block overflow-hidden rounded-xl bg-[#111111] border border-[#222222]"
-          >
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="h-[500px] relative rounded-l-xl overflow-hidden md:col-span-1">
-                {posts[0]?.image ? (
-                  <Image
-                    src={posts[0].image}
-                    alt={posts[0].title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover"
-                    priority
-                  />
-                ) : (
-                  <div className="w-full h-full bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400" />
-                )}
-              </div>
-              <div className="p-8 md:col-span-1">
-                <span className="text-sm text-foreground/60 uppercase">{posts[0]?.date}</span>
-                <h2 className="text-3xl font-bold mt-2 group-hover:text-blue-400">{posts[0]?.title}</h2>
-                <p className="mt-4 text-foreground/80">{posts[0]?.description}</p>
-                <div className="mt-6 flex items-center">
-                  <span className="text-sm text-foreground/60">{posts[0]?.read} minutes read</span>
-                </div>
-              </div>
-            </div>
-          </Link>
+<Link 
+  href={`/blog/${posts[0]?.slug}`}
+  className="group block overflow-hidden rounded-xl bg-[#000000] border 5px border-[#000000]"
+>
+  <div className="grid md:grid-cols-2 gap-4">
+    <div className="h-[450px] relative rounded-l-xl overflow-hidden md:col-span-1">
+      {posts[0]?.image ? (
+        <Image
+          src={posts[0].image}
+          alt={posts[0].title}
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
+          className="object-cover"
+          priority
+        />
+      ) : (
+        <div className="w-full h-full bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400" />
+      )}
+    </div>
+    <div className="p-8 md:col-span-1">
+      <span className="text-sm text-foreground/60 uppercase">{posts[0]?.date}</span>
+      <h2 className="text-3xl font-bold mt-2 group-hover:text-blue-400">{posts[0]?.title}</h2>
+      <p className="mt-4 text-foreground/80">{posts[0]?.description}</p>
+      <div className="mt-6 flex items-center">
+        <span className="text-sm text-foreground/60">{posts[0]?.read} minutes read</span>
+      </div>
+    </div>
+  </div>
+</Link>
         </div>
 
         {/* Featured Section */}
@@ -89,7 +89,7 @@ export default async function BlogPage() {
       <Link 
         href={`/blog/${post.slug}`} 
         key={post.slug}
-        className="group block rounded-xl bg-[#111111] border border-[#222222] overflow-hidden"
+        className="group block overflow-hidden rounded-xl bg-[#000000] border border-[#000000]"
       >
         <div className="h-[250px] bg-gradient-to-r from-green-500 to-blue-500 relative">
           <Image
