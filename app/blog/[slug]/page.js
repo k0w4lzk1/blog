@@ -18,8 +18,8 @@ export default async function BlogPostPage({ params }) {
   const contentHtml = processedContent.toString();
   
   return (
-    <main className="min-h-screen bg-[#0a0a0a] bg-[url('https://www.transparenttextures.com/patterns/black-lozenge.png')]">
-      <article className="container mx-auto p-4 max-w-3xl bg-[url('https://www.transparenttextures.com/patterns/black-paper.png')]"> 
+    <main className="min-h-screen bg-[#0a0a0a] bg-[url('https://www.transparenttextures.com/patterns/black-lozenge.png')] p-4">
+      <article className="container mx-auto max-w-3xl bg-[#111111] rounded-xl shadow-2xl border border-[#222222] p-4"> 
         <div className="text-center">
           <h1 className="text-4xl font-bold">{post.metadata.title}</h1>
           <div className="mt-4 text-foreground/60">

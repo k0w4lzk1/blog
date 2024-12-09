@@ -6,7 +6,7 @@ export default async function BlogPage() {
   const posts = await getAllPosts();
 
   return (
-    <main className="min-h-screen bg-[#0a0a0a] bg-[url('https://www.transparenttextures.com/patterns/black-lozenge.png')]">
+    <main className="min-h-screen bg-[#0a0a0a] bg-[url('https://www.transparenttextures.com/patterns/crissxcross.png')]">
       <div className="max-w-5xl mx-auto p-8">
         <div className="mb-12">
           <h1 className="text-4xl font-bold mb-2">Blog</h1>
