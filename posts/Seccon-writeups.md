@@ -2,7 +2,7 @@
 title: "Web Challenge Writeup"
 CTF: "Seccon24"
 date: "2024-12-7"
-description: "A writeup for web challenges from SECCON CTF"
+description: "A Writeup of a few Challenges from SecconCtf 24"
 read: 20
 image: /images/Seccon.png
 ---
