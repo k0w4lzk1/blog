@@ -7,9 +7,12 @@ read: 20
 image: /images/Seccon.png
 ---
 
-**Author:** Arkark_  
+### **Author:** Arkark_  
 
-Given Handout
+The Given Challenge was basically about how you could exploit the way how a differential occured between qs library and URL constructor
+
+
+### Handout
 
 Docker-compose 
 
