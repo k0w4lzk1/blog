@@ -8,8 +8,8 @@ image: /images/uiuctf25/logo.png
 ---
 
 ### **Author:** Cameron
+#### CTF Name :UIUCTF'25
 #### No. of solves / Points : 36 Solves / 189 Points
-
 #### **Challenge Description** 
 Keeping track of all these files makes me so dizzy I feel like I'm floating in space.
 
@@ -189,7 +189,7 @@ const storage = multer.diskStorage({
 ```
 Okay so coming to why this small piece of code happen to act as a red-herring for us by default if you are to use `multer.diskStorage` without explicitly setting the filename function in it it would create a random filename (ideally more secure)? , so what ended up happening is that we assumed there might have been a way to somehow bypass `path.basename + file.originalname` even tho they were very commonly used (._.)  , we wasted some time trying to figure out a way to get file write in and somehow overwrite index.js. tldr; that is a rather secure functionality of the app 🗿.
 
-Anyways moving from certain mishaps we faced to actual quirks
+Anyways moving from certain mishaps we faced 
 
 
 ## Exploitation Path ?
@@ -215,7 +215,7 @@ Concurrently is just well running both of them simultaneously(that is concurrent
 
 Okay so how does this help us well ideally if you are too upload a file it will just simply go and sit in `/images`.
 
-For context this is a txt file I uploaded and it happens to go and sit in /app/images/<name of the file>
+For context this is a txt file I uploaded called `Assignment.txt` and it happens to go and sit in /app/images/<name of the file>
 ![alt text](/images/uiuctf25/image-1.png)
 
 Well what if we try putting a `indec.ts` file inside since `tsc -w` ideally will watch all typescript files and convert them into js files and put them in the outdir `/dist` right?
