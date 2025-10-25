@@ -132,7 +132,7 @@ Well this is the whole application as such mainly with the given routes.The whol
 
 
 - **nginx.conf**
-```nginx
+```apache
 events {
     worker_connections 1024;  # Adjust as needed for your use case
 }
@@ -161,7 +161,7 @@ http {
 }
 ```
 This is the nginx configuration set for the application all
-```nginx
+```apache
 events {
     worker_connections 1024;
 }
@@ -172,7 +172,7 @@ upstream airspeed {
 ```
 These just define how many connections nginx can handle concurrently and that the nginx forwards traffic to a backend flask service called "airspeed".
 
-```nginx
+```apache
 location / {
     proxy_pass http://airspeed;
     proxy_set_header Host $host;
@@ -183,7 +183,7 @@ location / {
 ```
 for all requests to `/` It will proxy them to the flask backend.The `proxy_set_header` directive just forwards important information,
 
-```nginx
+```apache
         location = /debug {
             deny all;
             return 403;
@@ -208,7 +208,7 @@ def debug():
 Well as we assumed there does exists a route `/debug` for template injection to take place.
 
 However The nginx doesnt allow it tho
-```nginx
+```apache
         location = /debug {
             deny all;
             return 403;
@@ -227,7 +227,7 @@ So we have a basic understanding that we need /debug but we cannot hit it direct
 After having a basic idea what is going on we have a common understanding that we need some form of parsing differential to take place hence we look about it a bit more carefully.
 
 Something which we just breezed part before was the nginx location conf
-```nginx
+```apache
         location = /debug {
             deny all;
             return 403;
