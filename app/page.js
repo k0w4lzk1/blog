@@ -19,4 +19,4 @@ export default function HomePage() {
       <Footer className="mt-auto" />
     </div>
   );
-}
+} 
