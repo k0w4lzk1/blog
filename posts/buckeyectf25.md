@@ -7,8 +7,8 @@ read: 5
 image: /images/buckeyectf25/logo.png
 ---
 ### **Author:** corgo
-#### CTF Name :QnQSec'25
-#### No. of solves / Points : 150 Solves / 100 Points
+#### CTF Name :BuckeyeCTF'25 
+#### No. of solves / Points : 140 Solves / 100 Points
 #### **Challenge Description** 
 passwords won't save you now
 
