@@ -11,7 +11,8 @@ import Link from 'next/link';
 import 'highlight.js/styles/github-dark.css';
 
 export default async function BlogPostPage({ params }) {
-  const post = await getPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
   const processedContent = await remark()
     .use(remarkRehype)
     .use(rehypeHighlight)
